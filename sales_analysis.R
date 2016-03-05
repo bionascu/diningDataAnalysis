@@ -22,7 +22,12 @@ sales$month = month(sales$date)
 # Keep only dining hall food
 # whatever appears less than 5 time
 # in food family clean out cs
-selected_families = read.csv('/Users/nyuad/Documents/workspace/Datathon/datathon data/sales/unique_families.csv',stringsAsFactors=F, header=F)
+
+#unique_families = unique(sales$family)
+#write.csv(unique_families,'/Users/nyuad/Documents/workspace/Datathon/datathon data/sales/unique_families.csv',row.names=F)
+
+
+selected_families = read.csv('/Users/nyuad/Documents/repos/diningDataAnalysis/unique_families3.csv',stringsAsFactors=F, header=F)
 colnames(selected_families) = 'Family'
 
 food = sales[sales$family %in% selected_families$Family,]
